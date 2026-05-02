@@ -1,0 +1,13 @@
+[2026-05-02T05:44:25.342Z] [info] GET /manager/dashboard - 404 (4ms) | {"method":"GET","path":"/manager/dashboard","statusCode":404,"duration":"4ms"}
+[2026-05-02T05:44:34.197Z] [info] GET /scheduler - 404 (3ms) | {"method":"GET","path":"/scheduler","statusCode":404,"duration":"3ms"}
+[2026-05-02T05:44:50.571Z] [info] GET /schedule - 500 (200ms) | {"method":"GET","path":"/schedule","statusCode":500,"duration":"200ms"}
+[2026-05-02T05:44:50.608Z] [info] GET /favicon.ico - 404 (1ms) | {"method":"GET","path":"/favicon.ico","statusCode":404,"duration":"1ms"}
+[2026-05-02T05:49:09.414Z] [info] GET /schedule - 200 (382ms) | {"method":"GET","path":"/schedule","statusCode":200,"duration":"382ms"}
+[2026-05-02T06:05:32.686Z] [info] GET /schedule - 500 (191ms) | {"method":"GET","path":"/schedule","statusCode":500,"duration":"191ms"}
+[2026-05-02T06:07:06.106Z] [info] GET /schedule - 500 (192ms) | {"method":"GET","path":"/schedule","statusCode":500,"duration":"192ms"}
+[2026-05-02T06:07:10.009Z] [info] GET /schedule - 500 (172ms) | {"method":"GET","path":"/schedule","statusCode":500,"duration":"172ms"}
+[2026-05-02T06:07:31.674Z] [info] GET /schedule - 500 (454ms) | {"method":"GET","path":"/schedule","statusCode":500,"duration":"454ms"}
+[2026-05-02T06:07:46.258Z] [info] GET /schedule - 200 (311ms) | {"method":"GET","path":"/schedule","statusCode":200,"duration":"311ms"}
+[2026-05-02T06:11:12.707Z] [info] GET /schedule - 200 (300ms) | {"method":"GET","path":"/schedule","statusCode":200,"duration":"300ms"}
+[2026-05-02T06:11:16.158Z] [info] GET /schedule - 200 (244ms) | {"method":"GET","path":"/schedule","statusCode":200,"duration":"244ms"}
+[2026-05-02T06:11:18.505Z] [info] GET /schedule - 200 (247ms) | {"method":"GET","path":"/schedule","statusCode":200,"duration":"247ms"}

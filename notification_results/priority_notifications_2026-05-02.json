@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2026-05-02T06:13:23.820Z",
+  "count": 10,
+  "notifications": [
+    {
+      "id": "7c9f0c3c-5798-42b2-bcac-f72c73d8f329",
+      "type": "Placement",
+      "message": "Amazon.com Inc. hiring",
+      "timestamp": "2026-05-01 09:41:39",
+      "priorityScore": 306.3848
+    },
+    {
+      "id": "66421cb5-0a4b-4d6b-a889-d5f2383c662b",
+      "type": "Result",
+      "message": "mid-sem",
+      "timestamp": "2026-05-02 04:42:51",
+      "priorityScore": 209.0265
+    },
+    {
+      "id": "359bc284-da4b-4563-952c-6e8e75a014e4",
+      "type": "Result",
+      "message": "project-review",
+      "timestamp": "2026-05-02 00:41:45",
+      "priorityScore": 208.4684
+    },
+    {
+      "id": "8e7c6f6c-b3d0-4520-8047-3d3cb2b19417",
+      "type": "Result",
+      "message": "end-sem",
+      "timestamp": "2026-05-01 23:42:33",
+      "priorityScore": 208.3314
+    },
+    {
+      "id": "bf06d292-c76e-4ec0-b0fa-8ffeeab05dd2",
+      "type": "Result",
+      "message": "mid-sem",
+      "timestamp": "2026-05-01 23:12:39",
+      "priorityScore": 208.2622
+    },
+    {
+      "id": "b80e0cce-f2cc-41b8-8247-c7349f9730c4",
+      "type": "Result",
+      "message": "external",
+      "timestamp": "2026-05-01 21:12:21",
+      "priorityScore": 207.9837
+    },
+    {
+      "id": "fcbb3883-ad99-4ee2-869a-ed87998e761c",
+      "type": "Result",
+      "message": "project-review",
+      "timestamp": "2026-05-01 20:13:21",
+      "priorityScore": 207.8471
+    },
+    {
+      "id": "c3017030-1a3c-4b20-afeb-24093c5db6cc",
+      "type": "Result",
+      "message": "internal",
+      "timestamp": "2026-05-01 19:13:03",
+      "priorityScore": 207.7075
+    },
+    {
+      "id": "1dd66fb6-4ea7-42db-94ef-6ee6822c42aa",
+      "type": "Result",
+      "message": "end-sem",
+      "timestamp": "2026-05-01 14:12:15",
+      "priorityScore": 207.0112
+    },
+    {
+      "id": "01f051ee-5a4e-4951-9815-458b107787ab",
+      "type": "Result",
+      "message": "project-review",
+      "timestamp": "2026-05-01 13:41:33",
+      "priorityScore": 206.9402
+    }
+  ]
+}

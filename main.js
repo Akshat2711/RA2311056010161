@@ -30,11 +30,11 @@ app.get('/', (req, res) => {
  */
 app.post('/schedule', async (req, res) => {
   try {
-    logger.info('Received scheduling request');
+    await logger.info('Received scheduling request');
     
     const schedule = await scheduleVehicles();
     const outputDir = path.join(__dirname, 'vehicle_scheduling');
-    saveResults(schedule, outputDir);
+    await saveResults(schedule, outputDir);
 
     res.json({
       success: true,
@@ -42,7 +42,7 @@ app.post('/schedule', async (req, res) => {
       data: schedule
     });
   } catch (error) {
-    logger.error('Scheduling request failed', { error: error.message });
+    await logger.error('Scheduling request failed', { error: error.message });
     res.status(500).json({
       success: false,
       error: error.message
@@ -55,7 +55,7 @@ app.post('/schedule', async (req, res) => {
  */
 app.get('/schedule', async (req, res) => {
   try {
-    logger.info('Fetching schedule');
+    await logger.info('Fetching schedule');
     
     const schedule = await scheduleVehicles();
     
@@ -64,7 +64,7 @@ app.get('/schedule', async (req, res) => {
       data: schedule
     });
   } catch (error) {
-    logger.error('Failed to fetch schedule', { error: error.message });
+    await logger.error('Failed to fetch schedule', { error: error.message });
     res.status(500).json({
       success: false,
       error: error.message
@@ -81,7 +81,7 @@ app.get('/health', (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  logger.error('Unhandled error', { error: err.message, stack: err.stack });
+  logger.error('Unhandled error', { error: err.message, stack: err.stack }).catch(() => {});
   res.status(500).json({
     success: false,
     error: 'Internal server error',
@@ -94,17 +94,17 @@ const args = process.argv.slice(2);
 
 if (args.length > 0 && args[0] === 'run-scheduler') {
   // Run scheduler directly
-  logger.info('Running vehicle scheduler...');
+  logger.info('Running vehicle scheduler...').catch(() => {});
   require('./vechile_maintence_scheduler/scheduler');
 } else {
   // Start server
   app.listen(PORT, () => {
-    logger.success(`Vehicle Maintenance Scheduler Server running on port ${PORT}`);
-    logger.info('Available endpoints:');
-    logger.info('  GET  /              - Service info');
-    logger.info('  GET  /health        - Health check');
-    logger.info('  GET  /schedule      - Get current schedule');
-    logger.info('  POST /schedule      - Run scheduler');
+    logger.success(`Vehicle Maintenance Scheduler Server running on port ${PORT}`).catch(() => {});
+    logger.info('Available endpoints:').catch(() => {});
+    logger.info('  GET  /              - Service info').catch(() => {});
+    logger.info('  GET  /health        - Health check').catch(() => {});
+    logger.info('  GET  /schedule      - Get current schedule').catch(() => {});
+    logger.info('  POST /schedule      - Run scheduler').catch(() => {});
   });
 }
 

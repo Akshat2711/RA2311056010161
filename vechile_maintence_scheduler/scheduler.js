@@ -1,8 +1,3 @@
-/**
- * Vehicle Maintenance Scheduler
- * Optimizes vehicle maintenance scheduling to maximize operational impact score
- * while staying within mechanic-hour constraints per depot
- */
 
 const axios = require('axios');
 const Logger = require('../logging_middleware/logger');
@@ -15,20 +10,20 @@ const logger = new Logger('VehicleScheduler');
 const API_BASE = 'http://20.207.122.201';
 const HEADERS = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJhczA3MTFAc3JtaXN0LmVkdS5pbiIsImV4cCI6MTc3NzY5OTc3OCwiaWF0IjoxNzc3Njk4ODc4LCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiODNjNTA5N2YtYTRjZi00ZjY0LWFlNWQtN2ZmNTE2OWVkN2JjIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoiYWtzaGF0IHNyaXZhc3RhdmEiLCJzdWIiOiI5ZDIzMmM5MC1lNTY5LTQzNDYtODlkMC01NzJmNDJiNTM2NGYifSwiZW1haWwiOiJhczA3MTFAc3JtaXN0LmVkdS5pbiIsIm5hbWUiOiJha3NoYXQgc3JpdmFzdGF2YSIsInJvbGxObyI6InJhMjMxMTA1NjAxMDE2MSIsImFjY2Vzc0NvZGUiOiJRa2JweEgiLCJjbGllbnRJRCI6IjlkMjMyYzkwLWU1NjktNDM0Ni04OWQwLTU3MmY0MmI1MzY0ZiIsImNsaWVudFNlY3JldCI6IkhmbXRSbkpVSE5LQmJ3RUYifQ.4OVKXfyDGapTTV-V11SdWXj0AxCXUAAJLgfO2ol6aCk'
+  'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiYXVkIjoiaHR0cDovLzIwLjI0NC41Ni4xNDQvZXZhbHVhdGlvbi1zZXJ2aWNlIiwiZW1haWwiOiJhczA3MTFAc3JtaXN0LmVkdS5pbiIsImV4cCI6MTc3NzcwMjg1MiwiaWF0IjoxNzc3NzAxOTUyLCJpc3MiOiJBZmZvcmQgTWVkaWNhbCBUZWNobm9sb2dpZXMgUHJpdmF0ZSBMaW1pdGVkIiwianRpIjoiMmIwN2FkZjctZjU3My00YzBjLWIzZTQtZGI3M2ZjZDk3ODhjIiwibG9jYWxlIjoiZW4tSU4iLCJuYW1lIjoiYWtzaGF0IHNyaXZhc3RhdmEiLCJzdWIiOiI5ZDIzMmM5MC1lNTY5LTQzNDYtODlkMC01NzJmNDJiNTM2NGYifSwiZW1haWwiOiJhczA3MTFAc3JtaXN0LmVkdS5pbiIsIm5hbWUiOiJha3NoYXQgc3JpdmFzdGF2YSIsInJvbGxObyI6InJhMjMxMTA1NjAxMDE2MSIsImFjY2Vzc0NvZGUiOiJRa2JweEgiLCJjbGllbnRJRCI6IjlkMjMyYzkwLWU1NjktNDM0Ni04OWQwLTU3MmY0MmI1MzY0ZiIsImNsaWVudFNlY3JldCI6IkhmbXRSbkpVSE5LQmJ3RUYifQ.04gTmfJrfRSM4LSnEJVfBOAWRX0IumRhY0SjqHfTKaE'
 };
 
 /**
- * Fetch depots from API
+ FETCHING DEPOTS AND VEHICLES
  */
 async function fetchDepots() {
   try {
-    logger.info('Fetching depots from API...');
+    await logger.info('Fetching depots from API...');
     const response = await axios.get(`${API_BASE}/evaluation-service/depots`, { headers: HEADERS });
-    logger.success('Depots fetched successfully', { count: response.data.depots.length });
+    await logger.success('Depots fetched successfully', { count: response.data.depots.length });
     return response.data.depots;
   } catch (error) {
-    logger.error('Failed to fetch depots', { error: error.message });
+    await logger.error('Failed to fetch depots', { error: error.message });
     throw error;
   }
 }
@@ -38,12 +33,12 @@ async function fetchDepots() {
  */
 async function fetchVehicles() {
   try {
-    logger.info('Fetching vehicles from API...');
+    await logger.info('Fetching vehicles from API...');
     const response = await axios.get(`${API_BASE}/evaluation-service/vehicles`, { headers: HEADERS });
-    logger.success('Vehicles fetched successfully', { count: response.data.vehicles.length });
+    await logger.success('Vehicles fetched successfully', { count: response.data.vehicles.length });
     return response.data.vehicles;
   } catch (error) {
-    logger.error('Failed to fetch vehicles', { error: error.message });
+    await logger.error('Failed to fetch vehicles', { error: error.message });
     throw error;
   }
 }
@@ -99,13 +94,13 @@ function solveKnapsack(vehicles, capacity) {
  */
 async function scheduleVehicles() {
   try {
-    logger.info('Starting vehicle scheduling process...');
+    await logger.info('Starting vehicle scheduling process...');
     
     // Fetch data
     const depots = await fetchDepots();
     const vehicles = await fetchVehicles();
 
-    logger.info('Processing scheduling for each depot...');
+    await logger.info('Processing scheduling for each depot...');
     
     const schedule = {};
     let totalImpactAllDepots = 0;
@@ -113,7 +108,7 @@ async function scheduleVehicles() {
 
     // Process each depot
     depots.forEach(depot => {
-      logger.info(`Scheduling for Depot ${depot.ID}...`, { mechanic_hours: depot.MechanicHours });
+      logger.info(`Scheduling for Depot ${depot.ID}...`, { mechanic_hours: depot.MechanicHours }).catch(() => {});
       
       // Use knapsack to find optimal selection
       const result = solveKnapsack(vehicles, depot.MechanicHours);
@@ -139,7 +134,7 @@ async function scheduleVehicles() {
         total_impact: result.totalImpact,
         duration_used: result.totalDuration,
         tasks_selected: result.selectedVehicles.length
-      });
+      }).catch(() => {});
     });
 
     const summary = {
@@ -154,11 +149,11 @@ async function scheduleVehicles() {
       }
     };
 
-    logger.success('Vehicle scheduling completed successfully', summary.summary);
+    await logger.success('Vehicle scheduling completed successfully', summary.summary);
     
     return summary;
   } catch (error) {
-    logger.error('Scheduling failed', { error: error.message, stack: error.stack });
+    await logger.error('Scheduling failed', { error: error.message, stack: error.stack });
     throw error;
   }
 }
@@ -166,9 +161,9 @@ async function scheduleVehicles() {
 /**
  * Save results to file
  */
-function saveResults(schedule, outputDir) {
+async function saveResults(schedule, outputDir) {
   try {
-    logger.info('Saving results to file...');
+    await logger.info('Saving results to file...');
     
     // Ensure output directory exists
     if (!fs.existsSync(outputDir)) {
@@ -179,11 +174,11 @@ function saveResults(schedule, outputDir) {
     const outputPath = path.join(outputDir, `vehicle_schedule_${new Date().toISOString().split('T')[0]}.json`);
     fs.writeFileSync(outputPath, JSON.stringify(schedule, null, 2));
     
-    logger.success('Results saved successfully', { path: outputPath });
+    await logger.success('Results saved successfully', { path: outputPath });
     
     return outputPath;
   } catch (error) {
-    logger.error('Failed to save results', { error: error.message });
+    await logger.error('Failed to save results', { error: error.message });
     throw error;
   }
 }
@@ -196,7 +191,7 @@ async function main() {
     const schedule = await scheduleVehicles();
     
     const outputDir = path.join(__dirname, '../vehicle_scheduling');
-    saveResults(schedule, outputDir);
+    await saveResults(schedule, outputDir);
     
     console.log('\n' + '='.repeat(80));
     console.log('VEHICLE MAINTENANCE SCHEDULER - FINAL SUMMARY');
@@ -205,14 +200,17 @@ async function main() {
     console.log('='.repeat(80));
     
   } catch (error) {
-    logger.error('Main execution failed', { error: error.message });
+    await logger.error('Main execution failed', { error: error.message });
     process.exit(1);
   }
 }
 
 // Run if executed directly
 if (require.main === module) {
-  main();
+  main().catch(err => {
+    console.error('Fatal error:', err.message);
+    process.exit(1);
+  });
 }
 
 module.exports = { scheduleVehicles, solveKnapsack, fetchDepots, fetchVehicles, saveResults };

@@ -1,0 +1,45 @@
+[2026-05-02T05:37:13.825Z] [info] [SUCCESS] Vehicle Maintenance Scheduler Server running on port 3000 (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:13.826Z] [info] Available endpoints: (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:13.828Z] [info]   GET  /health        - Health check (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:13.829Z] [info]   GET  /              - Service info (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:13.830Z] [info]   GET  /schedule      - Get current schedule (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:13.831Z] [info]   POST /schedule      - Run scheduler (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:50.649Z] [info]   GET  /schedule      - Get current schedule (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:50.650Z] [info] Available endpoints: (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:50.651Z] [info]   POST /schedule      - Run scheduler (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:50.651Z] [info]   GET  /health        - Health check (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:50.652Z] [info] [SUCCESS] Vehicle Maintenance Scheduler Server running on port 3000 (API FAILED: Request failed with status code 404)
+[2026-05-02T05:37:50.653Z] [info]   GET  /              - Service info (API FAILED: Request failed with status code 404)
+[2026-05-02T05:43:34.139Z] [info] [SUCCESS] Vehicle Maintenance Scheduler Server running on port 3000
+[2026-05-02T05:43:34.146Z] [info] Available endpoints:
+[2026-05-02T05:43:34.147Z] [info]   GET  /              - Service info
+[2026-05-02T05:43:34.148Z] [info]   GET  /health        - Health check
+[2026-05-02T05:43:34.150Z] [info]   GET  /schedule      - Get current schedule
+[2026-05-02T05:43:34.151Z] [info]   POST /schedule      - Run scheduler
+[2026-05-02T05:44:50.374Z] [info] Fetching schedule
+[2026-05-02T05:44:50.545Z] [error] Failed to fetch schedule | {"error":"Request failed with status code 401"}
+[2026-05-02T05:48:54.470Z] [info] [SUCCESS] Vehicle Maintenance Scheduler Server running on port 3000
+[2026-05-02T05:48:54.478Z] [info] Available endpoints:
+[2026-05-02T05:48:54.480Z] [info]   GET  /              - Service info
+[2026-05-02T05:48:54.481Z] [info]   GET  /health        - Health check
+[2026-05-02T05:48:54.483Z] [info]   GET  /schedule      - Get current schedule
+[2026-05-02T05:48:54.484Z] [info]   POST /schedule      - Run scheduler
+[2026-05-02T05:49:09.033Z] [info] Fetching schedule
+[2026-05-02T06:05:32.495Z] [info] Fetching schedule
+[2026-05-02T06:05:32.664Z] [error] Failed to fetch schedule | {"error":"Request failed with status code 401"}
+[2026-05-02T06:07:05.914Z] [info] Fetching schedule
+[2026-05-02T06:07:06.083Z] [error] Failed to fetch schedule | {"error":"Request failed with status code 401"}
+[2026-05-02T06:07:09.837Z] [info] Fetching schedule
+[2026-05-02T06:07:09.985Z] [error] Failed to fetch schedule | {"error":"Request failed with status code 401"}
+[2026-05-02T06:07:31.220Z] [info] Fetching schedule
+[2026-05-02T06:07:31.621Z] [error] Failed to fetch schedule | {"error":"Request failed with status code 401"}
+[2026-05-02T06:07:41.984Z] [info] [SUCCESS] Vehicle Maintenance Scheduler Server running on port 3000
+[2026-05-02T06:07:41.991Z] [info] Available endpoints:
+[2026-05-02T06:07:41.993Z] [info]   GET  /              - Service info
+[2026-05-02T06:07:41.994Z] [info]   GET  /health        - Health check
+[2026-05-02T06:07:41.996Z] [info]   GET  /schedule      - Get current schedule
+[2026-05-02T06:07:41.997Z] [info]   POST /schedule      - Run scheduler
+[2026-05-02T06:07:45.947Z] [info] Fetching schedule
+[2026-05-02T06:11:12.408Z] [info] Fetching schedule
+[2026-05-02T06:11:15.915Z] [info] Fetching schedule
+[2026-05-02T06:11:18.258Z] [info] Fetching schedule
