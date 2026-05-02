@@ -1,0 +1,92 @@
+[2026-05-02T05:27:48.606Z] [VehicleScheduler] [INFO] Starting vehicle scheduling process...
+---
+[2026-05-02T05:27:48.608Z] [VehicleScheduler] [INFO] Fetching depots from API...
+---
+[2026-05-02T05:27:48.668Z] [VehicleScheduler] [SUCCESS] Depots fetched successfully
+{
+  "count": 5
+}
+---
+[2026-05-02T05:27:48.668Z] [VehicleScheduler] [INFO] Fetching vehicles from API...
+---
+[2026-05-02T05:27:48.696Z] [VehicleScheduler] [SUCCESS] Vehicles fetched successfully
+{
+  "count": 38
+}
+---
+[2026-05-02T05:27:48.697Z] [VehicleScheduler] [INFO] Processing scheduling for each depot...
+---
+[2026-05-02T05:27:48.698Z] [VehicleScheduler] [INFO] Scheduling for Depot 1...
+{
+  "mechanic_hours": 60
+}
+---
+[2026-05-02T05:27:48.699Z] [VehicleScheduler] [SUCCESS] Depot 1 scheduling complete
+{
+  "total_impact": 119,
+  "duration_used": 60,
+  "tasks_selected": 17
+}
+---
+[2026-05-02T05:27:48.699Z] [VehicleScheduler] [INFO] Scheduling for Depot 2...
+{
+  "mechanic_hours": 135
+}
+---
+[2026-05-02T05:27:48.700Z] [VehicleScheduler] [SUCCESS] Depot 2 scheduling complete
+{
+  "total_impact": 194,
+  "duration_used": 135,
+  "tasks_selected": 28
+}
+---
+[2026-05-02T05:27:48.701Z] [VehicleScheduler] [INFO] Scheduling for Depot 3...
+{
+  "mechanic_hours": 188
+}
+---
+[2026-05-02T05:27:48.702Z] [VehicleScheduler] [SUCCESS] Depot 3 scheduling complete
+{
+  "total_impact": 220,
+  "duration_used": 187,
+  "tasks_selected": 37
+}
+---
+[2026-05-02T05:27:48.702Z] [VehicleScheduler] [INFO] Scheduling for Depot 4...
+{
+  "mechanic_hours": 97
+}
+---
+[2026-05-02T05:27:48.702Z] [VehicleScheduler] [SUCCESS] Depot 4 scheduling complete
+{
+  "total_impact": 160,
+  "duration_used": 97,
+  "tasks_selected": 23
+}
+---
+[2026-05-02T05:27:48.703Z] [VehicleScheduler] [INFO] Scheduling for Depot 5...
+{
+  "mechanic_hours": 164
+}
+---
+[2026-05-02T05:27:48.704Z] [VehicleScheduler] [SUCCESS] Depot 5 scheduling complete
+{
+  "total_impact": 212,
+  "duration_used": 164,
+  "tasks_selected": 33
+}
+---
+[2026-05-02T05:27:48.704Z] [VehicleScheduler] [SUCCESS] Vehicle scheduling completed successfully
+{
+  "totalImpactScore": 905,
+  "totalTasksScheduled": 138,
+  "averageImpactPerDepot": "181.00"
+}
+---
+[2026-05-02T05:27:48.705Z] [VehicleScheduler] [INFO] Saving results to file...
+---
+[2026-05-02T05:27:48.706Z] [VehicleScheduler] [SUCCESS] Results saved successfully
+{
+  "path": "C:\\Users\\aksha\\OneDrive\\Desktop\\afford_exam\\vehicle_scheduling\\vehicle_schedule_2026-05-02.json"
+}
+---
